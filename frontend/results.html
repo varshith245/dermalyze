@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Consultation Results | Dermalyze</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-variant": "#e2e2e2",
+                "on-primary-fixed": "#00201d",
+                "tertiary-container": "#646a71",
+                "on-tertiary-fixed-variant": "#41474e",
+                "on-error-container": "#93000a",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary-fixed-variant": "#891933",
+                "secondary-container": "#fe7488",
+                "surface-container": "#eeeeed",
+                "on-error": "#ffffff",
+                "primary-fixed-dim": "#80d5cb",
+                "on-tertiary": "#ffffff",
+                "on-tertiary-container": "#e5ebf3",
+                "surface-container-highest": "#e2e2e2",
+                "surface": "#f9f9f8",
+                "inverse-surface": "#2f3130",
+                "primary-fixed": "#9cf2e8",
+                "primary-container": "#0f766e",
+                "primary": "#005c55",
+                "on-secondary": "#ffffff",
+                "secondary-fixed": "#ffdadc",
+                "surface-bright": "#f9f9f8",
+                "tertiary": "#4c5259",
+                "secondary": "#a93349",
+                "inverse-primary": "#80d5cb",
+                "error-container": "#ffdad6",
+                "secondary-fixed-dim": "#ffb2b9",
+                "on-surface": "#1a1c1c",
+                "background": "#f9f9f8",
+                "surface-container-high": "#e8e8e7",
+                "surface-container-low": "#f3f4f3",
+                "outline-variant": "#bdc9c6",
+                "on-tertiary-fixed": "#161c22",
+                "surface-tint": "#006a63",
+                "outline": "#6e7977",
+                "on-background": "#1a1c1c",
+                "surface-dim": "#dadad9",
+                "tertiary-fixed": "#dde3eb",
+                "on-primary-container": "#a3faef",
+                "tertiary-fixed-dim": "#c1c7cf",
+                "error": "#ba1a1a",
+                "on-secondary-fixed": "#400010",
+                "inverse-on-surface": "#f1f1f0",
+                "on-primary": "#ffffff",
+                "on-surface-variant": "#3e4947",
+                "on-secondary-container": "#730425",
+                "on-primary-fixed-variant": "#00504a"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "gutter": "24px",
+                "base": "8px",
+                "container-max": "1200px",
+                "margin-mobile": "16px",
+                "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                "title-md": ["Manrope"],
+                "display-lg": ["Manrope"],
+                "label-md": ["Manrope"],
+                "headline-lg": ["Manrope"],
+                "body-lg": ["Manrope"],
+                "body-md": ["Manrope"],
+                "caption": ["Manrope"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .clinical-shadow {
+            box-shadow: 0px 4px 20px rgba(30, 41, 59, 0.05);
+        }
+        .waveform-bar {
+            background: rgba(0, 92, 85, 0.2);
+            border-radius: 9999px;
+            width: 4px;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col" style="font-family: 'Manrope', sans-serif;">
+    <!-- TopNavBar -->
+    <header class="bg-surface/80 backdrop-blur-md border-b border-outline-variant sticky top-0 z-50 shadow-sm">
+        <nav class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-16">
+            <a href="/" class="text-title-md font-title-md font-bold text-primary flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+                Dermalyze
+            </a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="/how-it-works">How it works</a>
+                <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="/privacy">Privacy</a>
+                <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="/dashboard">Dashboard</a>
+                <a href="/consultation" class="bg-primary text-on-primary px-6 py-2.5 rounded-full text-label-md font-label-md hover:opacity-90 transition-opacity">
+                    Start Free Consultation
+                </a>
+            </div>
+            <button class="md:hidden material-symbols-outlined text-on-surface">menu</button>
+        </nav>
+    </header>
+
+    <main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+        <!-- Header Section -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+                <h1 class="text-headline-lg font-headline-lg text-on-background mb-2">Your Consultation Summary</h1>
+                <div class="flex items-center gap-3 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                    <p class="text-body-md font-body-md" id="resultDate">Loading...</p>
+                </div>
+            </div>
+            <a href="/consultation" class="flex items-center justify-center gap-2 bg-primary-container text-on-primary-container px-6 py-3 rounded-full font-label-md text-label-md hover:shadow-md transition-all">
+                <span class="material-symbols-outlined">add</span>
+                New Consultation
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+            <!-- Left Column: Inputs & Summary -->
+            <div class="lg:col-span-4 flex flex-col gap-gutter">
+                <!-- Uploaded Photo Card -->
+                <div class="bg-surface-container-lowest clinical-shadow rounded-xl p-6 border border-outline-variant/30">
+                    <h3 class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider mb-4">Submitted Media</h3>
+                    <div class="aspect-square w-full rounded-lg overflow-hidden bg-surface-container border border-outline-variant flex items-center justify-center" id="mediaDisplay">
+                        <span class="material-symbols-outlined text-[64px] text-outline/30">image</span>
+                    </div>
+                    <!-- Video frames grid -->
+                    <div class="grid grid-cols-3 gap-2 mt-4" id="framesGrid" style="display: none;">
+                    </div>
+                </div>
+
+                <!-- Voice Transcript Card -->
+                <div class="bg-surface-container-lowest clinical-shadow rounded-xl p-6 border border-outline-variant/30 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-primary-fixed-dim"></div>
+                    <h3 class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider mb-4">Original Transcript</h3>
+                    <div class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                        <p class="text-body-md font-body-md italic text-on-surface-variant" id="transcriptText">
+                            Loading...
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Disclaimer Card -->
+                <div class="bg-secondary-fixed clinical-shadow rounded-xl p-6 border border-secondary-container/20 flex gap-4">
+                    <div class="bg-on-secondary-container/10 p-3 rounded-full h-fit">
+                        <span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">shield_watch</span>
+                    </div>
+                    <div>
+                        <h4 class="text-title-md font-title-md text-on-secondary-container mb-2">Medical Disclaimer</h4>
+                        <p class="text-caption font-caption text-on-secondary-fixed-variant leading-relaxed">
+                            This is AI-generated informational guidance, not a medical diagnosis. The information provided is based on patterns and should not replace professional clinical judgment. If you experience severe pain, spreading redness, or fever, please seek immediate medical attention.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: AI Response & Audio -->
+            <div class="lg:col-span-8 flex flex-col gap-gutter">
+                <!-- Doctor's Guidance Card -->
+                <div class="bg-surface-container-lowest clinical-shadow rounded-xl p-8 border border-outline-variant/30 flex flex-col gap-8">
+                    <div class="flex items-center gap-4 border-b border-outline-variant pb-6">
+                        <div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center text-on-primary-container">
+                            <span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+                        </div>
+                        <div>
+                            <h2 class="text-title-md font-title-md text-on-surface">Doctor's AI Guidance</h2>
+                            <p class="text-label-md font-label-md text-primary">Analysis Complete</p>
+                        </div>
+                    </div>
+
+                    <!-- Response content rendered as formatted text -->
+                    <div class="prose prose-sm max-w-none text-body-md text-on-surface leading-relaxed" id="doctorResponse">
+                        <div class="animate-pulse space-y-4">
+                            <div class="h-4 bg-surface-container-high rounded w-3/4"></div>
+                            <div class="h-4 bg-surface-container-high rounded w-full"></div>
+                            <div class="h-4 bg-surface-container-high rounded w-5/6"></div>
+                        </div>
+                    </div>
+
+                    <!-- Audio Player Component -->
+                    <div class="mt-4 p-4 md:p-6 bg-surface-container-low rounded-xl border border-outline-variant/30" id="audioPlayerSection" style="display: none;">
+                        <p class="text-label-md font-label-md text-on-surface-variant mb-4">Listen to your consultation response</p>
+                        <div class="flex items-center gap-4">
+                            <button class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center hover:scale-105 transition-transform" id="playPauseBtn">
+                                <span class="material-symbols-outlined" id="playIcon">play_arrow</span>
+                            </button>
+                            <div class="flex-grow">
+                                <audio controls class="w-full" id="audioPlayer"></audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Action Row -->
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 mt-4">
+                    <a href="/dashboard" class="w-full md:w-auto flex items-center justify-center gap-2 px-6 py-3 border border-outline text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-variant transition-colors">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        Back to Dashboard
+                    </a>
+                    <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+                        <a href="/consultation" class="w-full md:w-auto px-8 py-3 bg-primary text-on-primary font-label-md text-label-md rounded-full clinical-shadow hover:opacity-90 transition-opacity text-center">
+                            Start New Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-low border-t border-outline-variant mt-12">
+        <div class="w-full py-12 px-margin-desktop max-w-container-max mx-auto flex flex-col gap-base">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-b border-outline-variant pb-8">
+                <div class="text-title-md font-title-md font-bold text-primary">Dermalyze</div>
+                <div class="flex flex-wrap gap-x-8 gap-y-4">
+                    <a class="text-caption font-caption text-on-tertiary-fixed-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+                    <a class="text-caption font-caption text-on-tertiary-fixed-variant hover:text-primary transition-colors" href="/privacy">Privacy Policy</a>
+                    <a class="text-caption font-caption text-on-tertiary-fixed-variant hover:text-primary transition-colors" href="#">Medical Disclaimer</a>
+                    <a class="text-caption font-caption text-on-tertiary-fixed-variant hover:text-primary transition-colors" href="#">Contact Support</a>
+                </div>
+            </div>
+            <p class="text-caption font-caption text-on-tertiary-fixed-variant max-w-3xl mt-4">
+                © 2026 Dermalyze. This tool provides general informational guidance only and is not a substitute for professional medical advice, diagnosis, or treatment.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Extract consultation ID from URL path: /results/<id>
+        const pathParts = window.location.pathname.split('/');
+        const consultationId = pathParts[pathParts.length - 1];
+
+        async function loadResults() {
+            try {
+                const resp = await fetch(`/api/consultation/${consultationId}`);
+                if (!resp.ok) throw new Error('Not found');
+                const data = await resp.json();
+
+                // Date
+                const dateStr = new Date(data.timestamp).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                const timeStr = new Date(data.timestamp).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+                document.getElementById('resultDate').textContent = `Generated on ${dateStr} • ${timeStr}`;
+
+                // Media display
+                const mediaDisplay = document.getElementById('mediaDisplay');
+                if (data.image_url) {
+                    mediaDisplay.innerHTML = `<img class="w-full h-full object-cover" src="${data.image_url}" alt="Submitted image"/>`;
+                } else if (data.media_type === 'video') {
+                    mediaDisplay.innerHTML = `<div class="flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[48px] text-primary">videocam</span><span class="text-caption text-on-surface-variant">Video analyzed</span></div>`;
+                }
+
+                // Video frames
+                if (data.extracted_frames && data.extracted_frames.length > 0) {
+                    const framesGrid = document.getElementById('framesGrid');
+                    framesGrid.style.display = 'grid';
+                    data.extracted_frames.forEach((frameUrl, i) => {
+                        const frameDiv = document.createElement('div');
+                        frameDiv.className = 'rounded-lg overflow-hidden border border-outline-variant aspect-square';
+                        frameDiv.innerHTML = `<img class="w-full h-full object-cover" src="${frameUrl}" alt="Frame ${i + 1}"/>`;
+                        framesGrid.appendChild(frameDiv);
+                    });
+                }
+
+                // Transcript
+                const transcriptEl = document.getElementById('transcriptText');
+                transcriptEl.textContent = data.transcript || 'No transcript provided.';
+
+                // Doctor's response - render with line breaks
+                const responseEl = document.getElementById('doctorResponse');
+                const responseText = data.doctor_response || 'No analysis available.';
+                responseEl.innerHTML = responseText.split('\n').map(line => {
+                    if (line.trim() === '') return '<br/>';
+                    if (line.startsWith('##')) return `<h3 class="text-title-md font-title-md text-primary mt-6 mb-2">${line.replace(/^#+\s*/, '')}</h3>`;
+                    if (line.startsWith('#')) return `<h2 class="text-headline-lg font-headline-lg mt-6 mb-3">${line.replace(/^#+\s*/, '')}</h2>`;
+                    if (line.startsWith('- ') || line.startsWith('* ')) return `<li class="flex gap-2 ml-4"><span class="text-primary font-bold">•</span>${line.substring(2)}</li>`;
+                    return `<p class="mb-2">${line}</p>`;
+                }).join('');
+
+                // Audio player
+                if (data.audio_url) {
+                    document.getElementById('audioPlayerSection').style.display = 'block';
+                    const audioPlayer = document.getElementById('audioPlayer');
+                    audioPlayer.src = data.audio_url;
+                }
+
+            } catch (err) {
+                console.error('Failed to load results:', err);
+                document.getElementById('doctorResponse').innerHTML = '<p class="text-secondary">Failed to load consultation results. Please try again.</p>';
+            }
+        }
+
+        loadResults();
+    </script>
+</body>
+</html>

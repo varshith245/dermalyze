@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Dashboard | Dermalyze</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e2e2e2",
+                    "on-primary-fixed": "#00201d",
+                    "tertiary-container": "#646a71",
+                    "on-tertiary-fixed-variant": "#41474e",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#891933",
+                    "secondary-container": "#fe7488",
+                    "surface-container": "#eeeeed",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#80d5cb",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#e5ebf3",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface": "#f9f9f8",
+                    "inverse-surface": "#2f3130",
+                    "primary-fixed": "#9cf2e8",
+                    "primary-container": "#0f766e",
+                    "primary": "#005c55",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffdadc",
+                    "surface-bright": "#f9f9f8",
+                    "tertiary": "#4c5259",
+                    "secondary": "#a93349",
+                    "inverse-primary": "#80d5cb",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ffb2b9",
+                    "on-surface": "#1a1c1c",
+                    "background": "#f9f9f8",
+                    "surface-container-high": "#e8e8e7",
+                    "surface-container-low": "#f3f4f3",
+                    "outline-variant": "#bdc9c6",
+                    "on-tertiary-fixed": "#161c22",
+                    "surface-tint": "#006a63",
+                    "outline": "#6e7977",
+                    "on-background": "#1a1c1c",
+                    "surface-dim": "#dadad9",
+                    "tertiary-fixed": "#dde3eb",
+                    "on-primary-container": "#a3faef",
+                    "tertiary-fixed-dim": "#c1c7cf",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#400010",
+                    "inverse-on-surface": "#f1f1f0",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#3e4947",
+                    "on-secondary-container": "#730425",
+                    "on-primary-fixed-variant": "#00504a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "8px",
+                    "container-max": "1200px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "title-md": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "caption": ["Manrope"]
+            },
+            "fontSize": {
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body {
+            background-color: #FAFAF9;
+            font-family: 'Manrope', sans-serif;
+            color: #1a1c1c;
+        }
+        .clinical-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0px 4px 20px rgba(30, 41, 59, 0.05);
+            transition: all 0.3s ease;
+        }
+        .clinical-card:hover {
+            box-shadow: 0px 8px 30px rgba(30, 41, 59, 0.08);
+            transform: translateY(-2px);
+        }
+        .sidebar-item {
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav {
+            background-color: #0f766e;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen overflow-x-hidden">
+    <!-- Sidebar Navigation -->
+    <aside class="hidden md:flex flex-col w-64 bg-surface border-r border-outline-variant sticky top-0 h-screen py-8 px-6">
+        <div class="mb-10">
+            <a href="/" class="text-title-md font-title-md font-bold text-primary flex items-center gap-2">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+                Dermalyze
+            </a>
+        </div>
+        <nav class="flex-1 space-y-2">
+            <a class="sidebar-item active-nav flex items-center gap-3 px-4 py-3 rounded-lg font-label-md text-label-md" href="/dashboard">
+                <span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+            <a class="sidebar-item text-on-surface-variant hover:bg-surface-container-high flex items-center gap-3 px-4 py-3 rounded-lg font-label-md text-label-md" href="/consultation">
+                <span class="material-symbols-outlined">add_circle</span> New Consultation
+            </a>
+            <a class="sidebar-item text-on-surface-variant hover:bg-surface-container-high flex items-center gap-3 px-4 py-3 rounded-lg font-label-md text-label-md" href="/how-it-works">
+                <span class="material-symbols-outlined">info</span> How It Works
+            </a>
+            <a class="sidebar-item text-on-surface-variant hover:bg-surface-container-high flex items-center gap-3 px-4 py-3 rounded-lg font-label-md text-label-md" href="/privacy">
+                <span class="material-symbols-outlined">security</span> Privacy Settings
+            </a>
+        </nav>
+        <div class="mt-auto pt-6 border-t border-outline-variant">
+            <div class="flex items-center gap-3 px-2">
+                <div class="w-10 h-10 rounded-full bg-primary-fixed-dim flex items-center justify-center text-primary font-bold">U</div>
+                <div class="flex flex-col">
+                    <span class="font-label-md text-label-md">User</span>
+                    <span class="text-caption font-caption text-on-surface-variant">Free Plan</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col min-w-0">
+        <!-- TopAppBar -->
+        <header class="sticky top-0 z-30 bg-surface/80 backdrop-blur-md border-b border-outline-variant h-16 flex items-center justify-between px-margin-mobile md:px-margin-desktop">
+            <h1 class="text-title-md font-title-md text-on-surface md:hidden">Dashboard</h1>
+            <div class="hidden md:block"></div>
+            <div class="flex items-center gap-4">
+                <button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container rounded-full">notifications</button>
+                <a href="/consultation" class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2.5 rounded-full flex items-center gap-2 shadow-sm transition-opacity active:opacity-80">
+                    <span class="material-symbols-outlined text-[20px]">add</span>
+                    Start Free Consultation
+                </a>
+            </div>
+        </header>
+
+        <div class="p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full">
+            <!-- Greeting & Stats Section -->
+            <section class="mb-12">
+                <div class="mb-8">
+                    <h2 class="text-headline-lg font-headline-lg text-on-surface">Welcome back</h2>
+                    <p class="text-body-md font-body-md text-on-surface-variant mt-1" id="dashboardSubtitle">Loading your consultation history...</p>
+                </div>
+                <!-- Stats Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter">
+                    <div class="clinical-card p-6 flex items-center gap-5">
+                        <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined">analytics</span>
+                        </div>
+                        <div>
+                            <p class="text-caption font-caption text-on-surface-variant uppercase tracking-wider">Total Consultations</p>
+                            <p class="text-title-md font-title-md text-on-surface" id="totalConsultations">0</p>
+                        </div>
+                    </div>
+                    <div class="clinical-card p-6 flex items-center gap-5">
+                        <div class="w-12 h-12 rounded-xl bg-secondary-container/10 flex items-center justify-center text-secondary">
+                            <span class="material-symbols-outlined">event</span>
+                        </div>
+                        <div>
+                            <p class="text-caption font-caption text-on-surface-variant uppercase tracking-wider">Last Visit</p>
+                            <p class="text-title-md font-title-md text-on-surface" id="lastVisit">—</p>
+                        </div>
+                    </div>
+                    <div class="clinical-card p-6 flex items-center gap-5">
+                        <div class="w-12 h-12 rounded-xl bg-tertiary-fixed/30 flex items-center justify-center text-tertiary">
+                            <span class="material-symbols-outlined">bookmark</span>
+                        </div>
+                        <div>
+                            <p class="text-caption font-caption text-on-surface-variant uppercase tracking-wider">Saved Reports</p>
+                            <p class="text-title-md font-title-md text-on-surface" id="savedReports">0</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section>
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-title-md font-title-md text-on-surface">Consultation History</h3>
+                </div>
+                <!-- Bento Grid Layout for Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter" id="historyGrid">
+                    <!-- Dynamic cards will be injected here by JS -->
+
+                    <!-- Empty State Placeholder (always last) -->
+                    <div class="border-2 border-dashed border-outline-variant rounded-[16px] flex flex-col items-center justify-center p-8 text-center min-h-[300px]" id="emptyState">
+                        <div class="w-20 h-20 mb-6 flex items-center justify-center rounded-full bg-surface-container-high">
+                            <span class="material-symbols-outlined text-[40px] text-outline" style="font-variation-settings: 'wght' 200;">add_photo_alternate</span>
+                        </div>
+                        <h4 class="text-body-lg font-bold text-on-surface mb-2">New Analysis</h4>
+                        <p class="text-body-md font-body-md text-on-surface-variant mb-6 px-4">Start a new session to track another skin concern.</p>
+                        <a href="/consultation" class="text-primary font-label-md text-label-md flex items-center gap-2 hover:underline">
+                            <span class="material-symbols-outlined">add</span> Create New
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom Illustration / CTA -->
+            <section class="mt-16 p-8 rounded-3xl bg-primary-fixed text-on-primary-fixed flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="max-w-md">
+                    <h3 class="text-headline-lg font-headline-lg mb-4">Start Your First Consultation</h3>
+                    <p class="text-body-md font-body-md opacity-90">Upload a photo or video and describe your symptoms. Our AI provides detailed clinical insights in under 2 minutes.</p>
+                    <a href="/consultation" class="mt-6 inline-block bg-on-primary-fixed text-white px-8 py-3 rounded-full font-label-md text-label-md hover:shadow-lg transition-shadow">Begin Now</a>
+                </div>
+                <div class="w-full md:w-1/3 aspect-video rounded-2xl overflow-hidden shadow-xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[64px] text-white/40">dermatology</span>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-auto w-full py-12 px-margin-mobile md:px-margin-desktop bg-surface-container-low border-t border-outline-variant">
+            <div class="max-w-container-max mx-auto flex flex-col gap-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="text-title-md font-title-md font-bold text-primary">Dermalyze</div>
+                    <div class="flex flex-wrap gap-6">
+                        <a class="text-body-md font-body-md text-on-tertiary-fixed-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+                        <a class="text-body-md font-body-md text-on-tertiary-fixed-variant hover:text-primary transition-colors" href="/privacy">Privacy Policy</a>
+                        <a class="text-body-md font-body-md text-on-tertiary-fixed-variant hover:text-primary transition-colors" href="#">Medical Disclaimer</a>
+                        <a class="text-body-md font-body-md text-on-tertiary-fixed-variant hover:text-primary transition-colors" href="#">Contact Support</a>
+                    </div>
+                </div>
+                <div class="text-caption font-caption text-on-surface-variant max-w-3xl">
+                    © 2026 Dermalyze. This tool provides general informational guidance only and is not a substitute for professional medical advice, diagnosis, or treatment.
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Mobile Navigation Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-lowest border-t border-outline-variant flex items-center justify-around z-50 px-4">
+        <a href="/dashboard" class="flex flex-col items-center gap-1 text-primary">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+            <span class="text-caption font-label-md">Home</span>
+        </a>
+        <a href="/how-it-works" class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined">info</span>
+            <span class="text-caption font-label-md">Info</span>
+        </a>
+        <a href="/consultation" class="-mt-12 bg-primary w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg">
+            <span class="material-symbols-outlined">add</span>
+        </a>
+        <a href="/privacy" class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined">security</span>
+            <span class="text-caption font-label-md">Privacy</span>
+        </a>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-caption font-label-md">Profile</span>
+        </button>
+    </div>
+
+    <script>
+        // Fetch consultation history from the backend API
+        async function loadDashboard() {
+            try {
+                const resp = await fetch('/api/consultations');
+                const consultations = await resp.json();
+                
+                const totalEl = document.getElementById('totalConsultations');
+                const lastVisitEl = document.getElementById('lastVisit');
+                const savedEl = document.getElementById('savedReports');
+                const subtitleEl = document.getElementById('dashboardSubtitle');
+                const grid = document.getElementById('historyGrid');
+                const emptyState = document.getElementById('emptyState');
+                
+                totalEl.textContent = consultations.length;
+                savedEl.textContent = consultations.length;
+                
+                if (consultations.length > 0) {
+                    const latest = consultations[0];
+                    lastVisitEl.textContent = new Date(latest.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                    subtitleEl.textContent = `You have ${consultations.length} report${consultations.length > 1 ? 's' : ''} available.`;
+                    
+                    // Insert consultation cards before the empty state
+                    consultations.forEach(c => {
+                        const card = document.createElement('div');
+                        card.className = 'clinical-card overflow-hidden flex flex-col group';
+                        
+                        // Truncate the doctor response for preview
+                        const preview = (c.doctor_response || 'Analysis pending...').substring(0, 120) + '...';
+                        const dateStr = new Date(c.timestamp).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                        const timeStr = new Date(c.timestamp).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+                        const title = c.title || 'Skin Consultation';
+                        
+                        card.innerHTML = `
+                            <div class="relative h-48 w-full bg-surface-container-low flex items-center justify-center">
+                                ${c.image_url ? `<img class="w-full h-full object-cover" src="${c.image_url}" alt="Consultation image"/>` : `<span class="material-symbols-outlined text-[64px] text-outline/30">dermatology</span>`}
+                                <div class="absolute top-4 right-4 bg-primary text-white text-caption font-label-md px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
+                                    <span class="material-symbols-outlined text-[14px]">check_circle</span> Reviewed
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h4 class="text-body-lg font-bold text-on-surface">${title}</h4>
+                                        <p class="text-caption font-caption text-on-surface-variant">${dateStr} • ${timeStr}</p>
+                                    </div>
+                                </div>
+                                <div class="bg-surface-container-low p-3 rounded-lg mb-4 border border-outline-variant/30">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                                        <span class="text-caption font-label-md text-primary">AI Insight</span>
+                                    </div>
+                                    <p class="text-body-md font-body-md text-on-surface-variant line-clamp-2">${preview}</p>
+                                </div>
+                                <a href="/results/${c.id}" class="block w-full py-2.5 border border-outline text-primary font-label-md text-label-md rounded-lg hover:bg-primary/5 transition-colors text-center">View Full Report</a>
+                            </div>
+                        `;
+                        grid.insertBefore(card, emptyState);
+                    });
+                } else {
+                    subtitleEl.textContent = 'No consultations yet. Start your first one!';
+                }
+            } catch (err) {
+                console.error('Failed to load dashboard:', err);
+                document.getElementById('dashboardSubtitle').textContent = 'Start your first consultation to see results here.';
+            }
+        }
+        
+        loadDashboard();
+    </script>
+</body>
+</html>

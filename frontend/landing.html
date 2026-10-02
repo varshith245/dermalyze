@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Dermalyze | Instant Dermatological Guidance</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .clinical-shadow {
+            box-shadow: 0px 4px 20px rgba(30, 41, 59, 0.05);
+        }
+        .clinical-shadow-hover:hover {
+            box-shadow: 0px 8px 30px rgba(30, 41, 59, 0.08);
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#e2e2e2",
+                      "on-primary-fixed": "#00201d",
+                      "tertiary-container": "#646a71",
+                      "on-tertiary-fixed-variant": "#41474e",
+                      "on-error-container": "#93000a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#891933",
+                      "secondary-container": "#fe7488",
+                      "surface-container": "#eeeeed",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#80d5cb",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#e5ebf3",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface": "#f9f9f8",
+                      "inverse-surface": "#2f3130",
+                      "primary-fixed": "#9cf2e8",
+                      "primary-container": "#0f766e",
+                      "primary": "#005c55",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#ffdadc",
+                      "surface-bright": "#f9f9f8",
+                      "tertiary": "#4c5259",
+                      "secondary": "#a93349",
+                      "inverse-primary": "#80d5cb",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#ffb2b9",
+                      "on-surface": "#1a1c1c",
+                      "background": "#f9f9f8",
+                      "surface-container-high": "#e8e8e7",
+                      "surface-container-low": "#f3f4f3",
+                      "outline-variant": "#bdc9c6",
+                      "on-tertiary-fixed": "#161c22",
+                      "surface-tint": "#006a63",
+                      "outline": "#6e7977",
+                      "on-background": "#1a1c1c",
+                      "surface-dim": "#dadad9",
+                      "tertiary-fixed": "#dde3eb",
+                      "on-primary-container": "#a3faef",
+                      "tertiary-fixed-dim": "#c1c7cf",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed": "#400010",
+                      "inverse-on-surface": "#f1f1f0",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#3e4947",
+                      "on-secondary-container": "#730425",
+                      "on-primary-fixed-variant": "#00504a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "base": "8px",
+                      "container-max": "1200px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "40px"
+              },
+              "fontFamily": {
+                      "title-md": ["Manrope"],
+                      "display-lg": ["Manrope"],
+                      "label-md": ["Manrope"],
+                      "headline-lg-mobile": ["Manrope"],
+                      "headline-lg": ["Manrope"],
+                      "body-lg": ["Manrope"],
+                      "body-md": ["Manrope"],
+                      "caption": ["Manrope"]
+              },
+              "fontSize": {
+                      "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+    <!-- TopNavBar -->
+    <nav class="docked full-width top-0 sticky z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant shadow-sm h-16">
+        <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+            <a href="/" class="text-title-md font-title-md font-bold text-primary flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+                Dermalyze
+            </a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="/how-it-works">How it works</a>
+                <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="/privacy">Privacy</a>
+                <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="/dashboard">Dashboard</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="/consultation" class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity">
+                    Start Free Consultation
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative">
+        <!-- Hero Section -->
+        <section class="relative pt-24 pb-32 overflow-hidden px-margin-mobile md:px-margin-desktop">
+            <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="flex flex-col gap-8 z-10">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-container/10 text-primary border border-primary/20 rounded-full w-fit">
+                        <span class="material-symbols-outlined text-[18px]">verified_user</span>
+                        <span class="text-label-md font-label-md">Instant Clinical Insights</span>
+                    </div>
+                    <h1 class="font-display-lg text-display-lg text-on-surface leading-tight">
+                        Talk to an AI Dermatologist <span class="text-primary">in Minutes</span>
+                    </h1>
+                    <p class="text-body-lg font-body-lg text-on-surface-variant max-w-lg">
+                        Upload a photo or video and describe your symptoms by voice. Get instant, doctor-style guidance powered by advanced medical AI vision and speech models.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="/consultation" class="h-12 px-8 bg-primary text-on-primary rounded-xl font-label-md text-label-md clinical-shadow hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+                            Start Consultation
+                        </a>
+                        <a href="/how-it-works" class="h-12 px-8 border border-outline text-primary rounded-xl font-label-md text-label-md hover:bg-surface-variant/20 transition-all flex items-center justify-center">
+                            See How It Works
+                        </a>
+                    </div>
+                </div>
+                <div class="relative lg:h-[600px] flex items-center justify-center">
+                    <div class="absolute inset-0 bg-primary/5 rounded-full blur-[100px] -z-10"></div>
+                    <div class="relative w-full max-w-[400px] bg-white rounded-[40px] p-4 clinical-shadow border border-outline-variant/30 rotate-2">
+                        <!-- Mockup Phone UI -->
+                        <div class="bg-surface rounded-[32px] overflow-hidden border border-outline-variant/20 h-[500px] flex flex-col">
+                            <div class="bg-white p-4 border-b border-outline-variant/20 flex items-center justify-between">
+                                <span class="material-symbols-outlined text-primary">arrow_back</span>
+                                <span class="text-label-md font-label-md">AI Consultation</span>
+                                <div class="w-8 h-8 rounded-full bg-primary-container/20"></div>
+                            </div>
+                            <div class="flex-1 p-6 space-y-6">
+                                <div class="flex flex-col gap-2">
+                                    <div class="w-full h-48 rounded-2xl overflow-hidden bg-surface-container-low border border-dashed border-outline-variant flex flex-col items-center justify-center gap-2 text-on-surface-variant">
+                                        <img class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7qkmZjL5aiclBEQJX2DIT79IEHrTvmSio6GzUehaiFYw1qXR78FgwpyyWb1riUEKTpdf417QcPpzKEwS2sFTnVgFxDq9kDMx17TMw2EanaTmS3-OmYeEIOVIzeOAzd-BCTLHT-iI7Sby4UegnTpQptkIRhXhM5mhv1-0ADt5_SlnEn16ikV1FZCUb6-4TrDNXHlk253aP0arrb7EdIW7_HE6M3z1Ty0v84wdE5B7-ws7oU_dpdbihjhffT8_6A0L-1l7jEdYpkgBo"/>
+                                    </div>
+                                    <p class="text-caption font-caption text-center">Tap to upload skin concern</p>
+                                </div>
+                                <div class="bg-primary/5 p-4 rounded-2xl border border-primary/10 animate-pulse">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-primary">mic</span>
+                                        <div class="space-y-1 w-full">
+                                            <div class="h-2 bg-primary/20 rounded-full w-3/4"></div>
+                                            <div class="h-2 bg-primary/10 rounded-full w-1/2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Strip -->
+        <section class="bg-white py-8 border-y border-outline-variant/30">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="flex flex-wrap justify-center md:justify-between items-center gap-6 opacity-70">
+                    <div class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant">
+                        <span class="material-symbols-outlined text-[20px]">info</span>
+                        Not a diagnosis, informational only
+                    </div>
+                    <div class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant">
+                        <span class="material-symbols-outlined text-[20px]">lock</span>
+                        Private & encrypted
+                    </div>
+                    <div class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant">
+                        <span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+                        Powered by AI vision & voice
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface">
+            <div class="max-w-container-max mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-headline-lg font-headline-lg mb-4">How It Works</h2>
+                    <p class="text-body-md font-body-md text-on-surface-variant">Simple, fast, and clinically grounded process.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-8 rounded-[16px] clinical-shadow clinical-shadow-hover transition-all border border-outline-variant/30 relative">
+                        <div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                            <span class="material-symbols-outlined text-[28px]">mic</span>
+                        </div>
+                        <h3 class="text-title-md font-title-md mb-3">1. Record Concern</h3>
+                        <p class="text-body-md font-body-md text-on-surface-variant">Describe your symptoms in your own words. Our AI understands medical context and nuances.</p>
+                        <span class="absolute top-8 right-8 text-display-lg font-display-lg text-primary/5">01</span>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="bg-white p-8 rounded-[16px] clinical-shadow clinical-shadow-hover transition-all border border-outline-variant/30 relative">
+                        <div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                            <span class="material-symbols-outlined text-[28px]">camera_alt</span>
+                        </div>
+                        <h3 class="text-title-md font-title-md mb-3">2. Upload Photo or Video</h3>
+                        <p class="text-body-md font-body-md text-on-surface-variant">Provide high-res photos or close-up videos of the area. Our vision models extract key frames and analyze texture.</p>
+                        <span class="absolute top-8 right-8 text-display-lg font-display-lg text-primary/5">02</span>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="bg-white p-8 rounded-[16px] clinical-shadow clinical-shadow-hover transition-all border border-outline-variant/30 relative">
+                        <div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                            <span class="material-symbols-outlined text-[28px]">forum</span>
+                        </div>
+                        <h3 class="text-title-md font-title-md mb-3">3. Get Guidance</h3>
+                        <p class="text-body-md font-body-md text-on-surface-variant">Receive instant written and spoken guidance about potential causes and next steps.</p>
+                        <span class="absolute top-8 right-8 text-display-lg font-display-lg text-primary/5">03</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Grid -->
+        <section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+            <div class="max-w-container-max mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                    <div class="max-w-xl">
+                        <h2 class="text-headline-lg font-headline-lg mb-4">Advanced AI Capabilities</h2>
+                        <p class="text-body-md font-body-md text-on-surface-variant">Trained on clinical datasets to provide professional-grade informational support.</p>
+                    </div>
+                    <a class="text-primary font-label-md flex items-center gap-1 hover:underline" href="/how-it-works">
+                        Explore Technology
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Voice Transcription -->
+                    <div class="bg-white p-6 rounded-[16px] border border-outline-variant/20 hover:border-primary/30 transition-colors">
+                        <span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">speech_to_text</span>
+                        <h4 class="font-title-md text-[18px] mb-2">Voice Transcription</h4>
+                        <p class="text-caption font-caption text-on-surface-variant">Natural language processing captures every detail of your symptom description.</p>
+                    </div>
+                    <!-- AI Visual Analysis -->
+                    <div class="bg-white p-6 rounded-[16px] border border-outline-variant/20 hover:border-primary/30 transition-colors">
+                        <span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">visibility</span>
+                        <h4 class="font-title-md text-[18px] mb-2">Visual & Video Analysis</h4>
+                        <p class="text-caption font-caption text-on-surface-variant">Deep learning models inspect skin conditions using multi-frame video extraction across all skin tones.</p>
+                    </div>
+                    <!-- Spoken Doctor Response -->
+                    <div class="bg-white p-6 rounded-[16px] border border-outline-variant/20 hover:border-primary/30 transition-colors">
+                        <span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">record_voice_over</span>
+                        <h4 class="font-title-md text-[18px] mb-2">Spoken Insights</h4>
+                        <p class="text-caption font-caption text-on-surface-variant">AI-generated voice reports provide clear, calming guidance you can listen to.</p>
+                    </div>
+                    <!-- Private & Secure -->
+                    <div class="bg-white p-6 rounded-[16px] border border-outline-variant/20 hover:border-primary/30 transition-colors">
+                        <span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+                        <h4 class="font-title-md text-[18px] mb-2">Private & Secure</h4>
+                        <p class="text-caption font-caption text-on-surface-variant">Enterprise-grade encryption ensures your medical data remains completely private.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface">
+            <div class="max-w-container-max mx-auto">
+                <h2 class="text-headline-lg font-headline-lg text-center mb-16">Trusted by Patients</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Quote 1 -->
+                    <div class="bg-white p-8 rounded-2xl clinical-shadow border border-outline-variant/10">
+                        <div class="flex gap-1 text-primary mb-4">
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-body-md font-body-md text-on-surface italic mb-6">"Being able to just speak about my concern and get a response that felt like a real conversation was so reassuring. The visual analysis was incredibly detailed."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary text-xs">SJ</div>
+                            <div>
+                                <p class="text-label-md font-label-md">Sarah Jenkins</p>
+                                <p class="text-caption font-caption text-on-surface-variant">Verified User</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quote 2 -->
+                    <div class="bg-white p-8 rounded-2xl clinical-shadow border border-outline-variant/10">
+                        <div class="flex gap-1 text-primary mb-4">
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-body-md font-body-md text-on-surface italic mb-6">"I used this late at night when my clinic was closed. It gave me the peace of mind I needed to wait until morning. A literal lifesaver for my anxiety."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary text-xs">MT</div>
+                            <div>
+                                <p class="text-label-md font-label-md">Mark Thompson</p>
+                                <p class="text-caption font-caption text-on-surface-variant">Verified User</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quote 3 -->
+                    <div class="bg-white p-8 rounded-2xl clinical-shadow border border-outline-variant/10">
+                        <div class="flex gap-1 text-primary mb-4">
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-body-md font-body-md text-on-surface italic mb-6">"The voice transcription is surprisingly accurate. It picked up all the medical terms I used perfectly. Highly recommend for quick guidance."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary text-xs">ER</div>
+                            <div>
+                                <p class="text-label-md font-label-md">Elena Rodriguez</p>
+                                <p class="text-caption font-caption text-on-surface-variant">Verified User</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Disclaimer Box -->
+        <section class="pb-32 px-margin-mobile md:px-margin-desktop">
+            <div class="max-w-container-max mx-auto bg-secondary-fixed text-on-secondary-container p-8 rounded-[16px] flex items-start gap-4 border border-secondary-container/20">
+                <span class="material-symbols-outlined text-secondary shrink-0" style="font-variation-settings: 'FILL' 1;">shield</span>
+                <div class="space-y-2">
+                    <h5 class="text-label-md font-label-md">Important Medical Disclaimer</h5>
+                    <p class="text-body-md font-body-md">
+                        This tool provides general informational guidance only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-low border-t border-outline-variant full-width">
+        <div class="w-full py-12 px-margin-desktop max-w-container-max mx-auto flex flex-col gap-base">
+            <div class="flex flex-col md:flex-row justify-between gap-12">
+                <div class="max-w-xs space-y-4">
+                    <div class="text-title-md font-title-md font-bold text-primary">Dermalyze</div>
+                    <p class="text-caption font-caption text-on-surface-variant">Empowering patients with accessible dermatological insights through cutting-edge AI.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-x-12 gap-y-4">
+                    <a class="text-on-tertiary-fixed-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Terms of Service</a>
+                    <a class="text-on-tertiary-fixed-variant hover:text-primary transition-colors text-body-md font-body-md" href="/privacy">Privacy Policy</a>
+                    <a class="text-on-tertiary-fixed-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Medical Disclaimer</a>
+                    <a class="text-on-tertiary-fixed-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Contact Support</a>
+                </div>
+            </div>
+            <div class="pt-8 mt-8 border-t border-outline-variant/30 text-caption font-caption text-on-surface-variant">
+                © 2026 Dermalyze. This tool provides general informational guidance only and is not a substitute for professional medical advice.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mockup = document.querySelector('.relative.w-full.max-w-\\[400px\\]');
+            if(mockup) {
+                let angle = 0;
+                function animate() {
+                    angle += 0.01;
+                    const yOffset = Math.sin(angle) * 10;
+                    const rotation = 2 + Math.cos(angle) * 1;
+                    mockup.style.transform = `translateY(${yOffset}px) rotate(${rotation}deg)`;
+                    requestAnimationFrame(animate);
+                }
+                animate();
+            }
+        });
+    </script>
+</body>
+</html>

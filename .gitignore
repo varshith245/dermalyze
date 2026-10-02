@@ -1,0 +1,40 @@
+# Environment & Secrets
+backend/.env
+
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Temporary media (user uploads & generated audio)
+temp_media/
+
+# Session database (regenerated at runtime)
+consultations.json
+
+# Audio artifacts (generated at runtime)
+doctor_response.mp3
+output_gtts.mp3
+patient_voice.wav
+patient_voice_test.mp3
+test-output.mp3
+test_pipeline_output.mp3
+*.mp3
+*.wav
+
+# Video test files
+test-video.mp4
+
+# Large sample images
+sample-image.png
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

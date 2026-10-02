@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Consultation | AI Skin Specialist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e2e2e2",
+                    "on-primary-fixed": "#00201d",
+                    "tertiary-container": "#646a71",
+                    "on-tertiary-fixed-variant": "#41474e",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#891933",
+                    "secondary-container": "#fe7488",
+                    "surface-container": "#eeeeed",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#80d5cb",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#e5ebf3",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface": "#f9f9f8",
+                    "inverse-surface": "#2f3130",
+                    "primary-fixed": "#9cf2e8",
+                    "primary-container": "#0f766e",
+                    "primary": "#005c55",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffdadc",
+                    "surface-bright": "#f9f9f8",
+                    "tertiary": "#4c5259",
+                    "secondary": "#a93349",
+                    "inverse-primary": "#80d5cb",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ffb2b9",
+                    "on-surface": "#1a1c1c",
+                    "background": "#f9f9f8",
+                    "surface-container-high": "#e8e8e7",
+                    "surface-container-low": "#f3f4f3",
+                    "outline-variant": "#bdc9c6",
+                    "on-tertiary-fixed": "#161c22",
+                    "surface-tint": "#006a63",
+                    "outline": "#6e7977",
+                    "on-background": "#1a1c1c",
+                    "surface-dim": "#dadad9",
+                    "tertiary-fixed": "#dde3eb",
+                    "on-primary-container": "#a3faef",
+                    "tertiary-fixed-dim": "#c1c7cf",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#400010",
+                    "inverse-on-surface": "#f1f1f0",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#3e4947",
+                    "on-secondary-container": "#730425",
+                    "on-primary-fixed-variant": "#00504a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "8px",
+                    "container-max": "1200px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "title-md": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "caption": ["Manrope"]
+            },
+            "fontSize": {
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f8;
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-clinical {
+            box-shadow: 0px 4px 20px rgba(30, 41, 59, 0.05);
+        }
+        .mic-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .7; transform: scale(1.05); }
+        }
+        .waveform-bar {
+            background: #0f766e;
+            width: 3px;
+            border-radius: 2px;
+            animation: wave 1.2s ease-in-out infinite;
+        }
+        @keyframes wave {
+            0%, 100% { height: 8px; }
+            50% { height: 24px; }
+        }
+        .glass-blur {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Top Navigation Anchor (Manual Suppression Applied as this is a focused Task Flow) -->
+<header class="bg-surface/80 backdrop-blur-md border-b border-outline-variant sticky top-0 z-50 h-16 shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+<div class="text-title-md font-title-md font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+                AI Skin Specialist
+            </div>
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">close</span>
+                Exit
+            </button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 flex flex-col lg:flex-row gap-12 justify-center">
+<!-- Consultation Content Flow -->
+<div class="w-full max-w-[700px] flex flex-col gap-8">
+<!-- Progress Stepper -->
+<div class="flex items-center justify-between px-4">
+<div class="flex flex-col items-center gap-2 flex-1 relative">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold shadow-md z-10">1</div>
+<span class="text-label-md font-label-md text-primary">Describe</span>
+<div class="absolute top-5 left-1/2 w-full h-[2px] bg-outline-variant -z-0"></div>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 relative">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold z-10">2</div>
+<span class="text-label-md font-label-md text-on-surface-variant">Upload</span>
+<div class="absolute top-5 left-1/2 w-full h-[2px] bg-outline-variant -z-0"></div>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold z-10">3</div>
+<span class="text-label-md font-label-md text-on-surface-variant">Analyze</span>
+</div>
+</div>
+<!-- Card 1: Describe Concern -->
+<section class="bg-surface-container-lowest rounded-xl shadow-clinical p-8 border border-outline-variant/30 transition-all duration-300 hover:shadow-md">
+<div class="flex items-center gap-4 mb-8">
+<div class="p-3 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">record_voice_over</span>
+</div>
+<div>
+<h2 class="text-title-md font-title-md">Describe your concern</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Tell us what you're feeling or observing.</p>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center py-6 bg-surface-container-low rounded-xl border border-dashed border-outline mb-6">
+<button class="w-20 h-20 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all mic-pulse" id="micButton">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+<div class="flex gap-1 mt-6 h-6 items-center">
+<div class="waveform-bar" style="animation-delay: 0.1s"></div>
+<div class="waveform-bar" style="animation-delay: 0.2s"></div>
+<div class="waveform-bar" style="animation-delay: 0.3s"></div>
+<div class="waveform-bar" style="animation-delay: 0.4s"></div>
+<div class="waveform-bar" style="animation-delay: 0.5s"></div>
+<div class="waveform-bar" style="animation-delay: 0.6s"></div>
+</div>
+<p class="text-caption font-caption text-on-surface-variant mt-4">Listening for your voice...</p>
+</div>
+<div class="relative">
+<label class="text-label-md font-label-md text-on-surface mb-2 block">Live Transcript</label>
+<textarea class="w-full min-h-[120px] bg-white border border-outline p-4 rounded-lg text-body-md font-body-md focus:ring-2 focus:ring-primary focus:outline-none transition-shadow" placeholder="Speak clearly into your microphone...">"It started as a small red patch on my left inner forearm about three days ago. It's slightly itchy and feels a bit raised, with a rough texture like sandpaper. No pain, just irritation..."</textarea>
+<div class="flex justify-end mt-2">
+<button class="text-primary text-label-md font-label-md flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                            Re-record
+                        </button>
+</div>
+</div>
+</section>
+<!-- Card 2: Upload Photo -->
+<section class="bg-surface-container-lowest rounded-xl shadow-clinical p-8 border border-outline-variant/30">
+<div class="flex items-center gap-4 mb-8">
+<div class="p-3 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">add_a_photo</span>
+</div>
+<div>
+<h2 class="text-title-md font-title-md">Upload a photo</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Clear images help the AI provide more accurate insights.</p>
+</div>
+</div>
+<div class="border-2 border-dashed border-outline-variant bg-surface rounded-xl p-10 flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">photo_camera</span>
+</div>
+<div class="text-center">
+<p class="text-body-md font-body-md font-semibold">Drag and drop or click to upload</p>
+<p class="text-caption font-caption text-on-surface-variant mt-1">Video upload optional — image required for analysis</p>
+</div>
+<div class="flex flex-wrap gap-3 mt-4">
+<button class="px-6 py-2.5 bg-white border border-outline rounded-full text-label-md font-label-md text-primary flex items-center gap-2 hover:bg-surface-container-low transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">upload</span>
+                            Upload Image
+                        </button>
+<button class="px-6 py-2.5 bg-white border border-outline rounded-full text-label-md font-label-md text-primary flex items-center gap-2 hover:bg-surface-container-low transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+                            Take Photo
+                        </button>
+</div>
+</div>
+<!-- Preview Thumbnail (Placeholder) -->
+<div class="mt-6 flex items-center gap-4">
+<div class="w-20 h-20 rounded-lg bg-surface-variant relative overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A macro close-up photograph of a person's inner forearm showing a small area of slightly reddened, textured skin. The lighting is bright and even, highlighting the clinical detail of the skin surface. The image is framed within a modern UI preview window, maintaining a clean medical aesthetic with neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ1POSM1ntb2vGA4-uTVDvHtxaQYzQCyH8tFzajyAvILqdXHwbVkxIxgnrk4gws0qLamCUS18VnahKnIDbMa_vU21bO1TLA2-3r4oG0Llwy6qTYz8_dYezZ7KlUfor5UWy7UZRLxdlIyfywtTNjC4knGR-3DtRh3ppHpUP4mtZrGlATJyvpKVq5MEZU5v5M7bNZ_JTBVoaPTrniktqyAgbEJZt14h6Wt_rauxI2IjQUvVJbw1DATY-uzgALSR3WuNEsTSJfhtcLlNH"/>
+<button class="absolute top-1 right-1 bg-black/50 text-white rounded-full p-0.5 hover:bg-black/70 transition-colors">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<div>
+<p class="text-label-md font-label-md font-bold">forearm_rash_01.jpg</p>
+<p class="text-caption font-caption text-on-surface-variant">2.4 MB • Ready for analysis</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Side Info Panel -->
+<aside class="w-full lg:w-80 flex flex-col gap-6">
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/30">
+<h3 class="text-label-md font-label-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+                    Tips for a good photo
+                </h3>
+<ul class="flex flex-col gap-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">wb_sunny</span>
+<div>
+<p class="text-label-md font-label-md">Good Lighting</p>
+<p class="text-caption font-caption text-on-surface-variant">Use natural daylight or a bright indoor light. Avoid shadows.</p>
+</div>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">center_focus_strong</span>
+<div>
+<p class="text-label-md font-label-md">Close-up & Sharp</p>
+<p class="text-caption font-caption text-on-surface-variant">Keep the camera 4-6 inches away. Ensure the area is in focus.</p>
+</div>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">filter_alt_off</span>
+<div>
+<p class="text-label-md font-label-md">No Filters</p>
+<p class="text-caption font-caption text-on-surface-variant">Do not use beauty filters or editing apps that alter colors.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="bg-primary-container/10 rounded-xl p-6 border border-primary/20">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">security</span>
+<div>
+<p class="text-label-md font-label-md text-primary">Your Privacy</p>
+<p class="text-caption font-caption text-on-surface-variant mt-1">Our AI processing is fully HIPAA-compliant. Your photos are encrypted end-to-end and deleted after analysis unless you opt-in to save them.</p>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Sticky Bottom Bar -->
+<div class="fixed bottom-0 left-0 right-0 glass-blur border-t border-outline-variant z-50">
+<div class="max-w-[700px] mx-auto px-margin-mobile md:px-0 py-6 flex flex-col items-center gap-3">
+<!-- Disabled State by Default, can be toggled via JS -->
+<button class="w-full h-12 bg-primary text-on-primary rounded-full font-label-md text-label-md flex items-center justify-center gap-2 shadow-lg opacity-50 cursor-not-allowed transition-all" id="analyzeBtn">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+                Analyze Concern
+            </button>
+<div class="flex items-center gap-2 text-caption font-caption text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                Your data is encrypted and never shared
+            </div>
+</div>
+</div>
+<!-- Padding for sticky bottom -->
+<div class="h-32"></div>
+<script>
+        // Micro-interaction: Toggle Mic Pulse and Analyze Button State simulation
+        const micButton = document.getElementById('micButton');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        let isRecording = true;
+
+        micButton.addEventListener('click', () => {
+            isRecording = !isRecording;
+            if(isRecording) {
+                micButton.classList.add('mic-pulse');
+                micButton.innerHTML = '<span class="material-symbols-outlined text-4xl" style="font-variation-settings: \'FILL\' 1;">mic</span>';
+            } else {
+                micButton.classList.remove('mic-pulse');
+                micButton.innerHTML = '<span class="material-symbols-outlined text-4xl">mic_off</span>';
+                
+                // Simulate "photo uploaded" state to enable analyze button
+                analyzeBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                analyzeBtn.classList.add('hover:bg-primary-container', 'active:scale-95');
+            }
+        });
+
+        // Simple Intersection Observer to fade in cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

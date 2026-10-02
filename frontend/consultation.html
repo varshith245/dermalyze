@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Consultation | Dermalyze</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e2e2e2",
+                    "on-primary-fixed": "#00201d",
+                    "tertiary-container": "#646a71",
+                    "on-tertiary-fixed-variant": "#41474e",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#891933",
+                    "secondary-container": "#fe7488",
+                    "surface-container": "#eeeeed",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#80d5cb",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#e5ebf3",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface": "#f9f9f8",
+                    "inverse-surface": "#2f3130",
+                    "primary-fixed": "#9cf2e8",
+                    "primary-container": "#0f766e",
+                    "primary": "#005c55",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffdadc",
+                    "surface-bright": "#f9f9f8",
+                    "tertiary": "#4c5259",
+                    "secondary": "#a93349",
+                    "inverse-primary": "#80d5cb",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ffb2b9",
+                    "on-surface": "#1a1c1c",
+                    "background": "#f9f9f8",
+                    "surface-container-high": "#e8e8e7",
+                    "surface-container-low": "#f3f4f3",
+                    "outline-variant": "#bdc9c6",
+                    "on-tertiary-fixed": "#161c22",
+                    "surface-tint": "#006a63",
+                    "outline": "#6e7977",
+                    "on-background": "#1a1c1c",
+                    "surface-dim": "#dadad9",
+                    "tertiary-fixed": "#dde3eb",
+                    "on-primary-container": "#a3faef",
+                    "tertiary-fixed-dim": "#c1c7cf",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#400010",
+                    "inverse-on-surface": "#f1f1f0",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#3e4947",
+                    "on-secondary-container": "#730425",
+                    "on-primary-fixed-variant": "#00504a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "8px",
+                    "container-max": "1200px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "title-md": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "caption": ["Manrope"]
+            },
+            "fontSize": {
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body {
+            background-color: #f9f9f8;
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-clinical {
+            box-shadow: 0px 4px 20px rgba(30, 41, 59, 0.05);
+        }
+        .mic-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .7; transform: scale(1.05); }
+        }
+        .waveform-bar {
+            background: #0f766e;
+            width: 3px;
+            border-radius: 2px;
+            animation: wave 1.2s ease-in-out infinite;
+        }
+        @keyframes wave {
+            0%, 100% { height: 8px; }
+            50% { height: 24px; }
+        }
+        .glass-blur {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+        .upload-zone.drag-over {
+            border-color: #005c55;
+            background-color: rgba(0, 92, 85, 0.05);
+        }
+        .hidden-input { display: none; }
+    </style>
+</head>
+<body class="text-on-surface">
+    <!-- Header -->
+    <header class="bg-surface/80 backdrop-blur-md border-b border-outline-variant sticky top-0 z-50 h-16 shadow-sm">
+        <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+            <a href="/" class="text-title-md font-title-md font-bold text-primary flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+                Dermalyze
+            </a>
+            <a href="/dashboard" class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-label-md text-label-md">
+                <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                Back to Dashboard
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 flex flex-col lg:flex-row gap-12 justify-center">
+        <!-- Consultation Content Flow -->
+        <div class="w-full max-w-[700px] flex flex-col gap-8">
+            <!-- Progress Stepper -->
+            <div class="flex items-center justify-between px-4">
+                <div class="flex flex-col items-center gap-2 flex-1 relative">
+                    <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold shadow-md z-10" id="step1Circle">1</div>
+                    <span class="text-label-md font-label-md text-primary" id="step1Label">Describe</span>
+                    <div class="absolute top-5 left-1/2 w-full h-[2px] bg-outline-variant -z-0"></div>
+                </div>
+                <div class="flex flex-col items-center gap-2 flex-1 relative">
+                    <div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold z-10" id="step2Circle">2</div>
+                    <span class="text-label-md font-label-md text-on-surface-variant" id="step2Label">Upload</span>
+                    <div class="absolute top-5 left-1/2 w-full h-[2px] bg-outline-variant -z-0"></div>
+                </div>
+                <div class="flex flex-col items-center gap-2 flex-1">
+                    <div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold z-10" id="step3Circle">3</div>
+                    <span class="text-label-md font-label-md text-on-surface-variant" id="step3Label">Analyze</span>
+                </div>
+            </div>
+
+            <!-- Card 1: Describe Concern -->
+            <section class="bg-surface-container-lowest rounded-xl shadow-clinical p-8 border border-outline-variant/30 transition-all duration-300 hover:shadow-md">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="p-3 bg-primary/10 rounded-lg">
+                        <span class="material-symbols-outlined text-primary">record_voice_over</span>
+                    </div>
+                    <div>
+                        <h2 class="text-title-md font-title-md">Describe your concern</h2>
+                        <p class="text-body-md font-body-md text-on-surface-variant">Tell us what you're feeling or observing.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-center py-6 bg-surface-container-low rounded-xl border border-dashed border-outline mb-6">
+                    <button class="w-20 h-20 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all" id="micButton">
+                        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">mic</span>
+                    </button>
+                    <div class="flex gap-1 mt-6 h-6 items-center" id="waveformContainer" style="display: none;">
+                        <div class="waveform-bar" style="animation-delay: 0.1s"></div>
+                        <div class="waveform-bar" style="animation-delay: 0.2s"></div>
+                        <div class="waveform-bar" style="animation-delay: 0.3s"></div>
+                        <div class="waveform-bar" style="animation-delay: 0.4s"></div>
+                        <div class="waveform-bar" style="animation-delay: 0.5s"></div>
+                        <div class="waveform-bar" style="animation-delay: 0.6s"></div>
+                    </div>
+                    <p class="text-caption font-caption text-on-surface-variant mt-4" id="micStatus">Click to start recording</p>
+                </div>
+                <div class="relative">
+                    <label class="text-label-md font-label-md text-on-surface mb-2 block">Symptom Description</label>
+                    <textarea class="w-full min-h-[120px] bg-white border border-outline p-4 rounded-lg text-body-md font-body-md focus:ring-2 focus:ring-primary focus:outline-none transition-shadow" id="transcriptArea" placeholder="Speak into your microphone or type your symptoms here..."></textarea>
+                    <div class="flex justify-end mt-2">
+                        <button class="text-primary text-label-md font-label-md flex items-center gap-1 hover:underline" id="clearTranscript">
+                            <span class="material-symbols-outlined text-[18px]">refresh</span>
+                            Clear
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Card 2: Upload Photo / Video -->
+            <section class="bg-surface-container-lowest rounded-xl shadow-clinical p-8 border border-outline-variant/30">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="p-3 bg-primary/10 rounded-lg">
+                        <span class="material-symbols-outlined text-primary">add_a_photo</span>
+                    </div>
+                    <div>
+                        <h2 class="text-title-md font-title-md">Upload a photo or video</h2>
+                        <p class="text-body-md font-body-md text-on-surface-variant">Clear images or close-up videos help the AI provide more accurate insights.</p>
+                    </div>
+                </div>
+                <div class="upload-zone border-2 border-dashed border-outline-variant bg-surface rounded-xl p-10 flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-colors cursor-pointer group" id="uploadZone">
+                    <div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                        <span class="material-symbols-outlined text-primary text-3xl">photo_camera</span>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-body-md font-body-md font-semibold">Drag and drop or click to upload</p>
+                        <p class="text-caption font-caption text-on-surface-variant mt-1">Supports images (JPG, PNG) and videos (MP4, MOV, WebM)</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-4">
+                        <button class="px-6 py-2.5 bg-white border border-outline rounded-full text-label-md font-label-md text-primary flex items-center gap-2 hover:bg-surface-container-low transition-colors shadow-sm" id="uploadImageBtn">
+                            <span class="material-symbols-outlined text-[20px]">upload</span>
+                            Upload Image
+                        </button>
+                        <button class="px-6 py-2.5 bg-white border border-outline rounded-full text-label-md font-label-md text-primary flex items-center gap-2 hover:bg-surface-container-low transition-colors shadow-sm" id="uploadVideoBtn">
+                            <span class="material-symbols-outlined text-[20px]">videocam</span>
+                            Upload Video
+                        </button>
+                    </div>
+                </div>
+                <input type="file" accept="image/*" class="hidden-input" id="imageInput"/>
+                <input type="file" accept="video/*" class="hidden-input" id="videoInput"/>
+                
+                <!-- Preview Thumbnails -->
+                <div class="mt-6 flex flex-wrap items-center gap-4" id="previewContainer" style="display: none;">
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Side Info Panel -->
+        <aside class="w-full lg:w-80 flex flex-col gap-6">
+            <div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/30">
+                <h3 class="text-label-md font-label-md text-primary mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">lightbulb</span>
+                    Tips for a good photo
+                </h3>
+                <ul class="flex flex-col gap-4">
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary text-[20px]">wb_sunny</span>
+                        <div>
+                            <p class="text-label-md font-label-md">Good Lighting</p>
+                            <p class="text-caption font-caption text-on-surface-variant">Use natural daylight or a bright indoor light. Avoid shadows.</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary text-[20px]">center_focus_strong</span>
+                        <div>
+                            <p class="text-label-md font-label-md">Close-up & Sharp</p>
+                            <p class="text-caption font-caption text-on-surface-variant">Keep the camera 4-6 inches away. Ensure the area is in focus.</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary text-[20px]">filter_alt_off</span>
+                        <div>
+                            <p class="text-label-md font-label-md">No Filters</p>
+                            <p class="text-caption font-caption text-on-surface-variant">Do not use beauty filters or editing apps that alter colors.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-primary-container/10 rounded-xl p-6 border border-primary/20">
+                <div class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary">security</span>
+                    <div>
+                        <p class="text-label-md font-label-md text-primary">Your Privacy</p>
+                        <p class="text-caption font-caption text-on-surface-variant mt-1">Your photos and videos are encrypted end-to-end and deleted after analysis unless you opt-in to save them.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Sticky Bottom Bar -->
+    <div class="fixed bottom-0 left-0 right-0 glass-blur border-t border-outline-variant z-50">
+        <div class="max-w-[700px] mx-auto px-margin-mobile md:px-0 py-6 flex flex-col items-center gap-3">
+            <button class="w-full h-12 bg-primary text-on-primary rounded-full font-label-md text-label-md flex items-center justify-center gap-2 shadow-lg opacity-50 cursor-not-allowed transition-all" id="analyzeBtn" disabled>
+                <span class="material-symbols-outlined text-[20px]">analytics</span>
+                Analyze Concern
+            </button>
+            <div class="flex items-center gap-2 text-caption font-caption text-on-surface-variant">
+                <span class="material-symbols-outlined text-[14px]">lock</span>
+                Your data is encrypted and never shared
+            </div>
+        </div>
+    </div>
+    <!-- Padding for sticky bottom -->
+    <div class="h-32"></div>
+
+    <!-- Loading Overlay -->
+    <div class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100] flex items-center justify-center" id="loadingOverlay" style="display: none;">
+        <div class="bg-white rounded-2xl p-10 text-center shadow-xl max-w-sm mx-4">
+            <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center animate-pulse">
+                <span class="material-symbols-outlined text-primary text-[32px]">psychology</span>
+            </div>
+            <h3 class="text-title-md font-title-md mb-2">Analyzing Your Concern</h3>
+            <p class="text-body-md text-on-surface-variant mb-4">Our AI is examining the visual evidence and your description...</p>
+            <div class="w-full bg-surface-container-high rounded-full h-2">
+                <div class="bg-primary h-2 rounded-full animate-pulse" style="width: 60%"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============ STATE ============
+        let mediaRecorder = null;
+        let audioChunks = [];
+        let isRecording = false;
+        let selectedImage = null;
+        let selectedVideo = null;
+        let audioBlob = null;
+
+        // ============ DOM REFERENCES ============
+        const micButton = document.getElementById('micButton');
+        const micStatus = document.getElementById('micStatus');
+        const waveformContainer = document.getElementById('waveformContainer');
+        const transcriptArea = document.getElementById('transcriptArea');
+        const clearTranscript = document.getElementById('clearTranscript');
+        const uploadZone = document.getElementById('uploadZone');
+        const uploadImageBtn = document.getElementById('uploadImageBtn');
+        const uploadVideoBtn = document.getElementById('uploadVideoBtn');
+        const imageInput = document.getElementById('imageInput');
+        const videoInput = document.getElementById('videoInput');
+        const previewContainer = document.getElementById('previewContainer');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+
+        // ============ MICROPHONE RECORDING ============
+        micButton.addEventListener('click', async () => {
+            if (!isRecording) {
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    mediaRecorder = new MediaRecorder(stream);
+                    audioChunks = [];
+                    mediaRecorder.ondataavailable = (e) => { if (e.data.size > 0) audioChunks.push(e.data); };
+                    mediaRecorder.onstop = () => {
+                        audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                        stream.getTracks().forEach(t => t.stop());
+                        micStatus.textContent = 'Recording saved. Click to re-record.';
+                        updateAnalyzeButton();
+                    };
+                    mediaRecorder.start();
+                    isRecording = true;
+                    micButton.classList.add('mic-pulse');
+                    micButton.innerHTML = '<span class="material-symbols-outlined text-4xl" style="font-variation-settings: \'FILL\' 1;">stop</span>';
+                    waveformContainer.style.display = 'flex';
+                    micStatus.textContent = 'Listening... Click to stop.';
+                } catch (err) {
+                    micStatus.textContent = 'Microphone access denied. Please type your symptoms.';
+                    console.error(err);
+                }
+            } else {
+                mediaRecorder.stop();
+                isRecording = false;
+                micButton.classList.remove('mic-pulse');
+                micButton.innerHTML = '<span class="material-symbols-outlined text-4xl" style="font-variation-settings: \'FILL\' 1;">mic</span>';
+                waveformContainer.style.display = 'none';
+            }
+        });
+
+        clearTranscript.addEventListener('click', () => {
+            transcriptArea.value = '';
+            audioBlob = null;
+            micStatus.textContent = 'Click to start recording';
+            updateAnalyzeButton();
+        });
+
+        // ============ FILE UPLOADS ============
+        uploadImageBtn.addEventListener('click', (e) => { e.stopPropagation(); imageInput.click(); });
+        uploadVideoBtn.addEventListener('click', (e) => { e.stopPropagation(); videoInput.click(); });
+        uploadZone.addEventListener('click', () => imageInput.click());
+
+        // Drag and drop
+        uploadZone.addEventListener('dragover', (e) => { e.preventDefault(); uploadZone.classList.add('drag-over'); });
+        uploadZone.addEventListener('dragleave', () => { uploadZone.classList.remove('drag-over'); });
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('drag-over');
+            const file = e.dataTransfer.files[0];
+            if (file) handleFileSelect(file);
+        });
+
+        imageInput.addEventListener('change', (e) => { if (e.target.files[0]) handleFileSelect(e.target.files[0]); });
+        videoInput.addEventListener('change', (e) => { if (e.target.files[0]) handleFileSelect(e.target.files[0]); });
+
+        function handleFileSelect(file) {
+            const isVideo = file.type.startsWith('video/');
+            const isImage = file.type.startsWith('image/');
+            
+            if (!isVideo && !isImage) {
+                alert('Please upload an image or video file.');
+                return;
+            }
+
+            if (isImage) {
+                selectedImage = file;
+                selectedVideo = null;
+            } else {
+                selectedVideo = file;
+                selectedImage = null;
+            }
+
+            // Show preview
+            previewContainer.style.display = 'flex';
+            previewContainer.innerHTML = '';
+            
+            const previewItem = document.createElement('div');
+            previewItem.className = 'flex items-center gap-4';
+            
+            if (isImage) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    previewItem.innerHTML = `
+                        <div class="w-20 h-20 rounded-lg bg-surface-variant relative overflow-hidden border border-outline-variant">
+                            <img class="w-full h-full object-cover" src="${e.target.result}" alt="Preview"/>
+                            <button class="absolute top-1 right-1 bg-black/50 text-white rounded-full p-0.5 hover:bg-black/70 transition-colors remove-file">
+                                <span class="material-symbols-outlined text-[16px]">close</span>
+                            </button>
+                        </div>
+                        <div>
+                            <p class="text-label-md font-label-md font-bold">${file.name}</p>
+                            <p class="text-caption font-caption text-on-surface-variant">${(file.size / 1024 / 1024).toFixed(1)} MB • Image ready</p>
+                        </div>
+                    `;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                previewItem.innerHTML = `
+                    <div class="w-20 h-20 rounded-lg bg-surface-variant relative overflow-hidden border border-outline-variant flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-[32px]">videocam</span>
+                        <button class="absolute top-1 right-1 bg-black/50 text-white rounded-full p-0.5 hover:bg-black/70 transition-colors remove-file">
+                            <span class="material-symbols-outlined text-[16px]">close</span>
+                        </button>
+                    </div>
+                    <div>
+                        <p class="text-label-md font-label-md font-bold">${file.name}</p>
+                        <p class="text-caption font-caption text-on-surface-variant">${(file.size / 1024 / 1024).toFixed(1)} MB • Video ready (frames will be extracted)</p>
+                    </div>
+                `;
+            }
+            
+            previewContainer.appendChild(previewItem);
+            
+            // Add remove handler
+            setTimeout(() => {
+                const removeBtn = previewContainer.querySelector('.remove-file');
+                if (removeBtn) {
+                    removeBtn.addEventListener('click', () => {
+                        selectedImage = null;
+                        selectedVideo = null;
+                        previewContainer.style.display = 'none';
+                        previewContainer.innerHTML = '';
+                        imageInput.value = '';
+                        videoInput.value = '';
+                        updateAnalyzeButton();
+                    });
+                }
+            }, 100);
+            
+            updateAnalyzeButton();
+        }
+
+        // ============ ANALYZE BUTTON STATE ============
+        function updateAnalyzeButton() {
+            const hasMedia = selectedImage || selectedVideo;
+            const hasText = transcriptArea.value.trim().length > 0 || audioBlob;
+            
+            if (hasMedia) {
+                analyzeBtn.disabled = false;
+                analyzeBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                analyzeBtn.classList.add('hover:bg-primary-container', 'active:scale-95');
+            } else {
+                analyzeBtn.disabled = true;
+                analyzeBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                analyzeBtn.classList.remove('hover:bg-primary-container', 'active:scale-95');
+            }
+        }
+        
+        transcriptArea.addEventListener('input', updateAnalyzeButton);
+
+        // ============ SUBMIT ANALYSIS ============
+        analyzeBtn.addEventListener('click', async () => {
+            if (analyzeBtn.disabled) return;
+            
+            loadingOverlay.style.display = 'flex';
+            
+            const formData = new FormData();
+            
+            // Add audio
+            if (audioBlob) {
+                formData.append('audio', audioBlob, 'recording.webm');
+            }
+            
+            // Add text transcript
+            if (transcriptArea.value.trim()) {
+                formData.append('transcript_text', transcriptArea.value.trim());
+            }
+            
+            // Add image or video
+            if (selectedImage) {
+                formData.append('image', selectedImage);
+            }
+            if (selectedVideo) {
+                formData.append('video', selectedVideo);
+            }
+            
+            try {
+                const resp = await fetch('/analyze', { method: 'POST', body: formData });
+                const data = await resp.json();
+                
+                if (data.consultation_id) {
+                    window.location.href = '/results/' + data.consultation_id;
+                } else {
+                    loadingOverlay.style.display = 'none';
+                    alert('Analysis failed: ' + (data.error || 'Unknown error'));
+                }
+            } catch (err) {
+                loadingOverlay.style.display = 'none';
+                alert('Network error. Please try again.');
+                console.error(err);
+            }
+        });
+
+        // ============ INTERSECTION OBSERVER FOR ANIMATIONS ============
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
